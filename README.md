@@ -7,8 +7,5 @@ TODO
 
 ## Installation
 
-TODO
-
-## Changelog
-
-TODO
+1. Download the .zip from the green button
+2. Blender -> Preferences -> Addons -> Install Addon
