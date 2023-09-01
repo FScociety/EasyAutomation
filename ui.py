@@ -4,7 +4,7 @@ from . import script_item
 import time 
 
 class EA_PT_side_panel(bpy.types.Panel):
-    bl_category = "FC"
+    bl_category = "EA"
     bl_region_type = "UI"
     bl_space_type = "VIEW_3D"
 

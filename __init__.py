@@ -11,7 +11,7 @@ bl_info = {
     "support": "COMMUNITY",
     "wiki_url": "",
     "tracker_url": "",
-    "category": "FC"
+    "category": "Scripting"
 }
 
 class bcolors:
