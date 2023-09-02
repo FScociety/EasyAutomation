@@ -9,6 +9,7 @@ A simple addon to ease the automation and scripting workflow in blender.
 - Batch runnning multiple script at once
 - Quick access to text editor while staying in 3d view
 - Easy variable exposing to the UI
+- Global scripts that can be easily linked into every file
 
 ## EasyAutomation format
 
