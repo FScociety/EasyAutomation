@@ -1,4 +1,4 @@
-# Blender-EasyAutomation
+# EasyAutomation for blender
 A simple addon to ease the automation and scripting workflow in blender.
 
 ![easyautomation promo](https://github.com/FScociety/EasyAutomation/assets/40910944/f4f22aff-6337-486c-a605-bbd994d5e1f2)
@@ -22,11 +22,17 @@ Every script, that starts with `#EA-Script` will be recognized by EasyAutomation
 - `#NoLine` : Combines the next variable and the current variable into a single line
 - `#NoName` : Doesn't display the name of the variable, just the value
 - `#NoValue` : Doesn't display the value of the variable, just the name (Can be used as a title)
-- `= / :` : (=) Defines the default value of a variable (:) Defines the type of variable
+- `=` Defines the default value of a variable
+- `:` Defines the type of a variable
 
 Side by side example:
 
 ![scripting_syntax](https://github.com/FScociety/EasyAutomation/assets/40910944/f99e7c5c-ac6f-4316-9125-4584c94f57ee)
+
+## Limitations
+- Sadly the dynamic creation of different variable types isn't supported blender's python api. So the current solution is a bit hacky and not all object types are implemented. (Though if needed all can be added)
+- Not much UI customisation. The current syntax gives you some controls over the ui but blenders ui api is definetly more advanced and better for complex scripts / addons. Though I think it wouldn't be smart to reimplement the wheel and trying to achieve highly customizable UI's.
+  I like the simplicity right now and I prob wont add big syntax additions in the future.
 
 ## Installation
 
