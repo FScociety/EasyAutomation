@@ -3,6 +3,8 @@ A simple addon to ease the automation and scripting workflow in blender.
 
 ![easyautomation promo](https://github.com/FScociety/EasyAutomation/assets/40910944/f4f22aff-6337-486c-a605-bbd994d5e1f2)
 
+### Currently no Linxu support, but iam working on it!
+
 ## Features
 
 - Convenient list of all easyautomation scripts
