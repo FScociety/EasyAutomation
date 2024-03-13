@@ -3,8 +3,6 @@ A simple addon to ease the automation and scripting workflow in blender.
 
 ![easyautomation promo](https://github.com/FScociety/EasyAutomation/assets/40910944/f4f22aff-6337-486c-a605-bbd994d5e1f2)
 
-### Currently no Linxu support, but iam working on it!
-
 ## Features
 
 - Convenient list of all easyautomation scripts
@@ -35,6 +33,8 @@ Side by side example:
 - Sadly the dynamic creation of different variable types isn't supported blender's python api. So the current solution is a bit hacky and not all object types are implemented. (Though if needed all can be added)
 - Not much UI customisation. The current syntax gives you some controls over the ui but blenders ui api is definetly more advanced and better for complex scripts / addons. Though I think it wouldn't be smart to reimplement the wheel and trying to achieve highly customizable UI's.
   I like the simplicity right now and I prob wont add big syntax additions in the future.
+
+### Currently no Linxu support, but iam working on it!
 
 ## Installation
 
