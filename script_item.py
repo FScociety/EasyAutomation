@@ -78,9 +78,11 @@ class EA_OT_RunScript(bpy.types.Operator):
         for line in script_line_list:
             final_script = final_script + line + "\n"    
 
+        script_name = script.name
+
         exec(final_script, globlsparam, globlsparam) #Komisch aber wenn ich sonst localparams drin hab kommen fehler
 
-        self.report({'INFO'}, ("Executed '" +script.name+"'"))
+        self.report({'INFO'}, ("Executed: [" + script_name + "]"))
 
         return {"FINISHED"}
 

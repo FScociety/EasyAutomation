@@ -2,7 +2,6 @@ import bpy
 from . import script_item
 from . import functions
 
-import pygetwindow as gw
 import os
 
 class EA_UL_script_list(bpy.types.UIList):
@@ -249,39 +248,6 @@ class EA_OT_open_editor(bpy.types.Operator):
 
     index : bpy.props.IntProperty(name="index")
 
-    # focus all windows using the pygetwindow lib that has blender in it
-    def focus_editor(self):
-        windows = gw.getAllWindows()
-
-        for win in windows:
-            if "blender" == win.title.lower():
-                win.activate()
-
-    # get opened windows using the pygetwindow lib and check for blender windows 
-    def get_blender_windows(self):
-        windows = gw.getAllWindows()
-        blender_windows = []
-
-        for win in windows:
-            if "blender" == win.title.lower():
-                blender_windows.append(win)
-        return blender_windows
-
-    # compare two window lists and check if there is a window in the new list, which isn't in the old one.
-    # Note: This assumes, to be only one new window, others are scipped, maybe there 
-    def get_newly_created_window(self, new_list, old_list):
-        for new_window in new_list:
-            match_with_old = False
-            for old_window in old_list:
-                if new_window == old_window:
-                    match_with_old = True
-                    break
-
-            if match_with_old == False:
-                return new_window
-
-        return None
-
     def execute(self, context):
         # Edit script in available text editor
         for window in bpy.context.window_manager.windows:
@@ -290,28 +256,13 @@ class EA_OT_open_editor(bpy.types.Operator):
                     space_data = area.spaces.active
                     space_data.text = context.scene.ea_script_list[self.index].script
 
-                    self.focus_editor()
                     return {"FINISHED"}
-
-        # old windows buffer
-        old_windows = self.get_blender_windows()
 
         # Duplicate current view into a new window and configure it to be ea text editor
         bpy.ops.screen.area_dupli('INVOKE_DEFAULT')
         area = bpy.context.window_manager.windows[-1].screen.areas[0]
         area.type = "TEXT_EDITOR"
         area.spaces[0].text = context.scene.ea_script_list[self.index].script
-
-        # current windows
-        new_windows = self.get_blender_windows()
-
-        # configure size of the newly created ea text editor
-        window = self.get_newly_created_window(new_windows, old_windows)
-
-        if window != None:
-            window.size = (640, 640)
-
-        self.focus_editor()
 
         return {"FINISHED"}
 

@@ -24,15 +24,6 @@ import subprocess
 import importlib.util
 import sys
 
-def install_package(package):
-    try:
-        if importlib.util.find_spec(package) is None:
-            subprocess.check_call([sys.executable, '-m', 'pip', 'install', package])
-    except Exception as e:
-        print(f"[{bcolors.FAIL}ERROR{bcolors.RESET}] Could not install {package}: {str(e)}")
-
-install_package("pygetwindow")
-
 import bpy
 
 from . import preferences
